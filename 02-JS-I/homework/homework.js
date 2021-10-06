@@ -95,6 +95,8 @@ function mayorQueCincuenta(num) {
   return false;
 }
 
+
+
 function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
@@ -110,6 +112,7 @@ function esPar(num) {
   }
   return false;
 }
+
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar

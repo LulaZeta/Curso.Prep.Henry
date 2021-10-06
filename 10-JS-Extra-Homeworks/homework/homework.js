@@ -10,6 +10,11 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var array = [];
+  for (prop in objeto) {
+    array.push([prop, objeto[prop]])
+  };
+  return array;
 }
 
 
@@ -18,6 +23,19 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var objeto = {};
+  for (let i = 0; i < string.length; i++) {
+    var cantidad = 0;
+    if (!objeto[string[i]]) {
+      for (let j = 0; j < string.length; j++) {
+        if (string[i] === string[j]) {
+          cantidad ++
+        }
+      }
+      objeto[string[i]] = cantidad;
+    }
+  } 
+  return objeto;
 }
 
 
@@ -26,8 +44,25 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-}
+  
+  var Mayuscula = '';
+  var Minuscula = '';
+  for (i = 0; i < s.length; i++) {
+    if (s[i] === s[i].toUpperCase()) {
+      Mayuscula = Mayuscula + s[i];
+      }
+    else {
+      Minuscula = Minuscula + s[i];
+      }
+  }
+  return (Mayuscula + Minuscula)
+  }
 
+//let object = {};
+//for (str in string) {
+//  object[string[str]] = (object[string[str]]||0) +1
+//}
+//return object;
 
 function asAmirror(str) {
   //La función recibe una frase. 
@@ -35,6 +70,25 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+ /* var palabra = ""
+  var fraseEspejo = ''
+  for ( i = 0 ; i < str.length; i++) {
+      if (str[i] === " " || i === str.length) {
+        palabraEspejo = "";
+      for ( var j = palabra.length - 1; i >= 0; i--) {
+        palabraEspejo = palabraEspejo + palabra[j];
+      }
+      palabra = "";
+      if (i === str.length) {
+        fraseEspejo = fraseEspejo + palabraEspejo;
+      } else {
+        fraseEspejo = fraseEspejo + palabraEspejo + ' ';
+      } 
+    } else {
+      palabra = palabra + str[i];  //guardo la ultima palabra caracter por caracter
+     }
+}
+return fraseEspejo;  */
 } 
 
 
@@ -43,6 +97,16 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var numeroString = numero.toString()
+  for(var i = 0; i < numeroString.length; i++);
+  for(var j = numeroString.length - 1; j >= 0; j--) {
+    if (numeroString[i] !== numeroString[j]) {
+      return "No es capicua";
+    }
+    else {
+      return "Es capicua"
+    }
+  }
 }
 
 

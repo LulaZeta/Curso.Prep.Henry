@@ -1,0 +1,33 @@
+h1{
+    color:rgb(0, 23, 128);
+}
+body {
+    background-image: url("https://marketplace.canva.com/EAEKqI09MjI/1/0/1600w/canva-azul-rosa-arco%C3%ADris-gradiente-fondo-virtual-zoom-kyL4zdu4OLM.jpg");
+}
+
+img {
+    width: 400px;
+}
+
+#contenido {
+    width: 800px; margin: 0 auto;
+}
+
+#thirdDiv { 
+    width: 500px;
+    height: 600px;
+    background-color: rgb(241, 205, 241);
+    padding: 50px;
+    border:rgb(241, 164, 128) 8px solid;
+    border-radius: 40px 70px 40px 40px;
+}
+
+#spanId {
+    font-size: 18px;
+    margin: 50px;
+}
+
+#divClass {
+    display: flexbox;
+    margin: auto;
+}
