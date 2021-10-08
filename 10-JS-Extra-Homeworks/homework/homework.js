@@ -10,7 +10,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-  var array = [];
+  var array = [];                          // (for ...in) itera en propiedades de un objeto
   for (prop in objeto) {
     array.push([prop, objeto[prop]])
   };
@@ -26,10 +26,10 @@ function numberOfCharacters(string) {
   var objeto = {};
   for (let i = 0; i < string.length; i++) {
     var cantidad = 0;
-    if (!objeto[string[i]]) {
-      for (let j = 0; j < string.length; j++) {
+    if (!objeto[string[i]]) {                         // No existe la propiedad "a" (i=0) dentro del objeto?
+      for (let j = 0; j < string.length; j++) {       //recorro el string para chequear y cuento las veces que aparece
         if (string[i] === string[j]) {
-          cantidad ++
+          cantidad ++;
         }
       }
       objeto[string[i]] = cantidad;
@@ -97,31 +97,67 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
-  var numeroString = numero.toString()
-  for(var i = 0; i < numeroString.length; i++);
-  for(var j = numeroString.length - 1; j >= 0; j--) {
-    if (numeroString[i] !== numeroString[j]) {
-      return "No es capicua";
-    }
-    else {
-      return "Es capicua"
-    }
+  var numeroStr = numero.toString()
+  var numAlReves = ''
+for (var j = numeroStr.length - 1; j >= 0; j--) {
+    numAlReves = numAlReves + numeroStr.charAt(j);
+}
+  if (numAlReves === numeroStr) {
+   return "Es capicua";
+  }
+  else {
+   return "No es capicua";
   }
 }
+// var = string = numero.toString();     // "103" 
+// var arrayNum = string.split('');      // ["1" , "0" , "3"]
+// var inv = arrayNum.reverse();         // ["3" , "0" , "1"]
 
+// if (string === inv.join('')) {
+//return "Es capicua";]
+//return "No es capicua";
 
 function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var cadsinABC = ""
+  for (var i = 0; i < cadena.length; i++) {
+    if (cadena.charAt(i) !== "a" &&  cadena.charAt(i) !== "b" && cadena.charAt(i) !== "c") {
+      cadsinABC = cadsinABC + cadena.charAt(i);
+    }
+  }
+    return cadsinABC;
 }
+
+// var newStr = cadena;   //se puede obviar este paso...es solo para no trabajar en el valor q nos estan pasando
+// newStr = newStr.replace("a" , '');   // .replace("lo q queremos replazar", "por lo q queremos remplazar")
+// newStr = newStr.replace("b" , '');
+// newStr = newStr.replace("c" , '');
+// return newStr;
 
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = i + 1 ; j < arr.length; j++) {
+      if (arr[i].length > arr[j].length) {
+        var aux = arr[i];
+        arr[i] = arr[j];
+        arr[j] = aux;
+      }
+    }
+  }
+  return arr;
 }
+
+// var OrderArr = arr.sort(funcion(elemento; elemProx)) {
+  // return elemento.length - elemProx.length
+  // })
+  // return ordenArr;
+
 
 
 function buscoInterseccion(arreglo1, arreglo2){
@@ -129,7 +165,17 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+  var nuevoArray = [];
+
+  for (var i = 0; i < arreglo1.length; i++) {
+    for (var j = 0; j < arreglo2.length; j++) {
+      if (arreglo1[i] === arreglo2[j]) {
+        nuevoArray.push(arreglo1[i]);
+      }
+    }
+  }  
+  return nuevoArray;
 }
 
 
